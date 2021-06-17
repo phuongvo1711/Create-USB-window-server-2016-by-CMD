@@ -1,0 +1,16 @@
+B1.  Mount file .iso Windows Server 2016. Giả sử sau khi mount xong là ổ đĩa E:
+B2.  Cắm USB drive vào máy tính. Giả sử ta có ổ đĩa F:
+B3.  Chạy cmd (command prompt) bằng quyền administrator
+B4.  Gõ lệnh diskpart
+B5.  Gõ lệnh list disk
+B6.  Gõ lệnh select disk X (với X là số thứ tự của USB drive)
+B7.  Gõ lệnh list disk (kiểm tra cột đấu tiên ổ USB drive có đánh dấu * tức là đã chọn đúng ổ đĩa). Nếu chưa đúng thì thực hiện lại bước B6 và kiểm tra lại.
+B8.  Gõ lệnh clean
+B9.  Gõ lệnh create partition primary
+B10. Gõ lệnh select partition 1
+B11. Gõ lệnh active
+B12. Gõ lệnh format fs=ntfs quick label=”Win2016”
+B13. Gõ lệnh exit
+B14. Gõ lệnh E: (chuyển ổ đĩa hiện hành sang ổ CD ảo đã mount file .iso)
+B15. Gõ lệnh bootsect /nt60 F: (F: ổ đĩa USB)
+B16. xcopy E:\*.* F:\ /E /H /F
