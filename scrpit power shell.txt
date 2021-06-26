@@ -1,0 +1,1 @@
+Get-ChildItem .\ -Recurse |   Where-Object {$_.LastWriteTime -gt (Get-date "2021-06-5T00:00:00") -AND $_.lastwritetime -lt (Get-date "2021-06-6T23:59:00") } | Select-Object Name,FullName, LastWriteTime,Length | export-csv D:\nomad.csv -NoTypeInformation
